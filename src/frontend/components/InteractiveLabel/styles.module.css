@@ -1,0 +1,14 @@
+/**
+ * # Interactive Label (Styles)
+ *
+ *
+ */
+
+.label-menu {
+  @apply invisible
+}
+
+.label:hover ~ .label-menu,
+.label-menu:hover {
+  @apply visible;
+}
