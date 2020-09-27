@@ -1,0 +1,12 @@
+/**
+ * # Global
+ *
+ */
+
+/* https://tailwindcss.com/docs/preflight */
+
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
