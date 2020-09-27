@@ -1,0 +1,64 @@
+#
+fragment CommonCategoryFieldFragment on Category {
+  id
+  name
+  keywords {
+    id
+    name
+  }
+}
+
+#
+query GetCategoriesQuery {
+  categories {
+    ...CommonCategoryFieldFragment
+  }
+}
+
+#
+input CreateCategoryInput {
+  name: String!
+}
+
+#
+mutation CreateCategoryMutation($input: CreateCategoryInput!) {
+  createCategory(input: $input) {
+    ...CommonCategoryFieldFragment
+  }
+}
+
+#
+input DeleteCategoryInput {
+  id: ID!
+}
+
+#
+mutation DeleteCategoryMutation($input: DeleteCategoryInput!) {
+  deleteCategory(input: $input) # Boolean
+}
+
+#
+input AddCategoryKeywordInput {
+  categoryId: ID!
+  keywordName: String!
+}
+
+#
+mutation AddCategoryKeywordMutation($input: AddCategoryKeywordInput!) {
+  addCategoryKeyword(input: $input) {
+    ...CommonCategoryFieldFragment
+  }
+}
+
+#
+input RemoveCategoryKeywordInput {
+  categoryId: ID!
+  keywordId: ID!
+}
+
+#
+mutation RemoveCategoryKeywordMutation($input: RemoveCategoryKeywordInput!) {
+  removeCategoryKeyword(input: $input) {
+    ...CommonCategoryFieldFragment
+  }
+}
