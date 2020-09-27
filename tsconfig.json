@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "target": "esnext",
+    "module": "esnext",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "declaration": true,
+    "noEmit": false,
+    "allowJs": true,
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "typeRoots": ["./node_modules/@types", "./@types"],
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "declarationDir": "./dist/types",
+    "plugins": [
+      {
+        "transform": "@zerollup/ts-transform-paths"
+      },
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
+    "jsx": "preserve"
+  },
+  "include": ["@types", "src/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

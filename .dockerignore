@@ -1,0 +1,5 @@
+.dockerignore
+.git
+coverage
+docs
+node_modules
